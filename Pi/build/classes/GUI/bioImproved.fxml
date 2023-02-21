@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="766.0" prefWidth="1073.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TestController">
+    <children>
+        <VBox alignment="CENTER" layoutX="14.0" layoutY="16.0" spacing="10.0">
+           <children>
+               <HBox alignment="CENTER" spacing="10.0" />
+               <HBox alignment="CENTER" spacing="10.0" />
+               <HBox alignment="CENTER" spacing="10.0" />
+           </children>
+        </VBox>
+         <TableView fx:id="tableView" layoutX="373.0" layoutY="437.0" prefHeight="200.0" prefWidth="592.0">
+             <columns>
+                 <TableColumn fx:id="refColumn" prefWidth="125.0" text="Référence" />
+                 <TableColumn fx:id="dateColumn" prefWidth="125.0" text="Date" />
+                 <TableColumn fx:id="typeColumn" prefWidth="125.0" text="Type" />
+                 <TableColumn fx:id="resultatColumn" prefWidth="125.0" text="Résultat" />
+             </columns>
+         </TableView>
+         <Button fx:id="btnAfficher" layoutX="639.0" layoutY="658.0" onAction="#handleAfficher" prefHeight="25.0" prefWidth="104.0" text="Afficher" />
+          <Button fx:id="btnSupprimer" layoutX="858.0" layoutY="369.0" onAction="#handleSupprimer" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Supprimer" />
+          <Button fx:id="btnModifier" layoutX="858.0" layoutY="293.0" onAction="#handleModifier" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Modifier" />
+          <Button fx:id="btnAjouter" layoutX="858.0" layoutY="219.0" onAction="#handleAjouter" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Ajouter" />
+          <DatePicker fx:id="datePicker" layoutX="584.0" layoutY="369.0" />
+          <ComboBox fx:id="cmbType" layoutX="584.0" layoutY="281.0" prefWidth="150.0" />
+          <Label layoutX="626.0" layoutY="331.0" text="Date du test" />
+          <Label layoutX="618.0" layoutY="250.0" text="Type du test" />
+         <TextField fx:id="txtRef" layoutX="584.0" layoutY="219.0" />
+         <Label layoutX="612.0" layoutY="189.0" text="Référence Test" />
+      <Label fx:id="label1" layoutX="444.0" layoutY="46.0" prefHeight="46.0" prefWidth="414.0" text="ESPACE BIOLOGISTE" textFill="#009688">
+         <font>
+            <Font name="Georgia" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorMessage" layoutX="663.0" layoutY="100.0" prefHeight="17.0" prefWidth="0.0" textFill="#FF0000" visible="false" />
+<Label fx:id="successMessage" layoutX="668.0" layoutY="156.0" textFill="#00FF00" visible="false" />
+      <AnchorPane prefHeight="832.0" prefWidth="308.0" style="-fx-background-color: #009688;">
+         <children>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="-2.0" layoutY="221.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="310.0" style="-fx-background-color: #009688;" text="COMPTE" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="-2.0" layoutY="293.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="310.0" style="-fx-background-color: #009688;" text="TESTS" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="-2.0" layoutY="365.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="310.0" style="-fx-background-color: #009688;" text="LABORATOIRES" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="-2.0" layoutY="437.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="310.0" style="-fx-background-color: #009688;" text="SETTINGS" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="176.0" fitWidth="200.0" layoutX="65.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@3553700.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ComboBox fx:id="referenceComboBox" layoutX="369.0" layoutY="219.0" prefWidth="150.0" />
+      <Label layoutX="369.0" layoutY="189.0" text="Liste des réferences" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="923.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="218.0" layoutX="308.0" layoutY="682.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="808.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Screenshot%202023-02-21%20113900.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="796.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@34557796.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="807.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="32.0" layoutX="584.0" layoutY="654.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@1950715.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
